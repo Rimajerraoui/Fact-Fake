@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from database import engine, Base
+from app.api.routes import fact_checks
 
 Base.metadata.create_all(bind=engine)
 
@@ -17,6 +18,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(fact_checks.router)
 
 @app.get("/")
 def root():
