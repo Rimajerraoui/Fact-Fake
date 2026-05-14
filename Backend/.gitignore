@@ -1,0 +1,11 @@
+# Umgebungsvariablen - NIE auf GitHub!
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code
+.vscode/
